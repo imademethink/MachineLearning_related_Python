@@ -1,0 +1,40 @@
+Categorical (Nominal) data:
+=================
+================= 
+A categorical data (sometimes called a nominal data) is one that has two or more categories, 
+but there is no intrinsic ordering to the categories.  
+
+For example, 
+Apple colour is a categorical data having two categories (red and green)
+Also other examples : dog breed, eye colour, gender
+Point to note is there is no intrinsic ordering to the categories.
+There is no agreed way to order these from highest to lowest. 
+
+A purely categorical data is one that simply allows you to assign categories 
+But you cannot clearly order the data.
+
+
+Categorical (Ordinal) data
+================= 
+================= 
+If the data has a clear ordering, then it would be an Ordinal data
+
+For example, 
+Apple size is a ordinal data having e.g. three categories (small, medium and  large)
+Satisfaction rating of a hotel e.g. poor, normal, good, very good, excelent
+Also other examples: blood group, any type of rating, pain severity
+Point to note is we can order the data based on some category
+
+
+Numerical data
+================= 
+================= 
+This data can be counted using numbers. It has two types broadly:
+Discrete data:
+    It consists of possible values in countable (range)
+    For Example:
+        Shoe size, No. of siblings, Max car speed
+Continuous data:
+    For example:
+        Weight or a person, Water currant, Blood pressure, Hair length
+
