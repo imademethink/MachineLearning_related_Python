@@ -1,1 +1,1 @@
-# MachineLearning_related_Python
+# Machine learning related Python programming
