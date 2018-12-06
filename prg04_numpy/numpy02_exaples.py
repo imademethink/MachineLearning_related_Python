@@ -101,6 +101,12 @@ arr52 = np.array([[11,16],[12,17],[13,18],[14,19],[15,20]])
 print("arr52 =             \n")
 print_this_matrix(arr52)
 
+
+
+
+
+
+
 arr_final_32 = arr35.dot(arr52)
 print("arr_final_32 = dot product of 2 arrays =             \n")
 print_this_matrix(arr_final_32)
@@ -110,6 +116,9 @@ arr352 = np.array([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]])
 arr_vector_product = np.vdot(arr351, arr352)
 print("arr_vector_product = vector product of 2 arrays =             \n",arr_vector_product)
 print("\n")
+
+
+
 
 arr3n5 = np.array([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]])
 print("arr3n5 =             \n")
@@ -124,18 +133,20 @@ print("arr3n5 transpose of matrix =             \n")
 print_this_matrix(arr3n5)
 print("\n")
 
+
+
+
+''' add child array in each parent array : row wise'''
 arr2n5 = np.array([[1,2],[3,4],[5,6],[7,8],[9,10]])
-eachrowadd = np.array([5,8])
 print("arr2n5 =             \n")
 print_this_matrix(arr2n5)
-print("eachrowadd =             \n", eachrowadd)
 arr2n5new = np.empty_like(arr2n5)
-print("arr2n5new =             \n")
-print_this_matrix(arr2n5new)
+print("arr2n5new =             \n", arr2n5new)
+eachrowadd = np.array([5,8])
+print("eachrowadd =             \n", eachrowadd)
 for i in range(arr2n5new.shape[0]):
     arr2n5new[i, :] = arr2n5[i, :] + eachrowadd
-print("arr2n5new =             \n")
-print_this_matrix(arr2n5new)
+print("arr2n5new =             \n", arr2n5new)
 print("\n")
 
 
@@ -145,7 +156,7 @@ print("\n")
 # 'others': [bool, object, str, unicode, numpy.void],
 # 'uint': [numpy.uint8, numpy.uint16, numpy.uint32, numpy.uint32, numpy.uint64]
 
-# declaring array as intended dtype
+''' declaring array as intended dtype '''
 arr_dype_unsigned_int  = np.array([[1,2],[3,4],[5,6],[7,8],[9,10]],dtype=np.uint)
 print("arr_dype_unsigned_int  = \n", arr_dype_unsigned_int)
 arr_dype_int  = np.array([[1,2],[3,4],[5,6],[7,8],[9,10]],dtype=np.int)
@@ -157,6 +168,10 @@ print("arr_dype_int16= \n", arr_dype_int16)
 arr_dype_int32 = np.array([[1,2],[3,4],[5,6],[7,8],[9,10]],dtype=np.int32)
 print("arr_dype_int32= \n", arr_dype_int32)
 print("\n")
+
+
+
+
 
 matrix_student = np.array([['Roy',11,12,13,14,15],
                         ['John',21,22,23,24,25],
@@ -173,6 +188,9 @@ matrix_student.resize(8,3)
 print("matrix_student.resize(8,3)  = \n", matrix_student)
 print("\n")
 
+
+
+
 print("stacking of different types of array")
 matrix_student1= np.array([['Roy',11,12,13,14,15],
                         ['John',21,22,23,24,25],
@@ -184,6 +202,11 @@ matrix_student2= np.array([['Roy',11,12,13,14,15],
                         ['April',51,52,53,54,55]])
 print("matrix_student1 original = \n", matrix_student1)
 print("matrix_student2 original = \n", matrix_student2)
+
+
+
+
+
 
 arr_first_4n3 = np.array([['zero',  1,  True,  3],
                        ['twelve', 13, False, 15]])
@@ -199,6 +222,11 @@ print("concatenate vertically \n",   np.concatenate((arr_first_4n3,arr_second_4n
 print("concatenate horizontally \n", np.concatenate((arr_first_4n3,arr_second_4n3), axis=1))
 print("\n")
 
+
+
+
+
+
 print("place arrays as column in another array")
 arr_c1 = np.array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
 arr_c2 = np.array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
@@ -210,7 +238,7 @@ print("\n")
 
 
 
-# add array element using + symbol
+''' add array element using + symbol  '''
 arr_reshaped_to_2d = [[ 0,  1,  2,  3],
                       [ 4,  5,  6,  7],
                       [ 8,  9, 10, 11],
@@ -221,6 +249,10 @@ print("arr_reshaped_to_2d -- after addition using + symbol       = \n",arr_resha
 print("\n")
 
 
+
+
+
+
 matrix_student = np.array([['Roy',11,12,13,14,15],
                         ['John',21,22,23,24,25],
                         ['Dave',31,32,33,34,35],
@@ -228,6 +260,11 @@ matrix_student = np.array([['Roy',11,12,13,14,15],
                         ['April',51,52,53,54,55]])
 print("matrix_student =             ")
 print_this_matrix(matrix_student)
+
+
+
+
+
 
 # get selected slice of matrix elements
 print("get selected slice of matrix elements")
@@ -242,6 +279,12 @@ print("matrix_student[1:4,0]     ==\n", matrix_student[1:4,0])
 print("---> from row 1 to row 4 and from col 0 to col last")
 print("matrix_student[1:4]     ==\n", matrix_student[1:4])
 print("\n")
+
+
+
+
+
+
 
 matrix_student = np.array([['Roy',11,12,13,14,15],
                         ['John',21,22,23,24,25],
@@ -265,6 +308,10 @@ print("vsplit(matrix_student,3)[0])     ==\n", np.vsplit(matrix_student,3)[0])
 print("\n")
 
 
+
+
+
+
 # also simple array_split for 1d normal array
 arr_normal = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 print("arr_normal =          ",arr_normal)
@@ -272,7 +319,10 @@ print("simple 1d array split -- array_split(arr_normal,4)[3] ",np.array_split(ar
 print("simple 1d array split -- array_split(arr_normal,2)[1] ",np.array_split(arr_normal,2)[1])
 print("\n")
 
-# array copy, shallow copy, multiple names etc
+
+
+
+# same array with multiple names etc
 arr_1 = np.array([['Roy',11,12,13,14,15],
                ['John',21,22,23,24,25],
                ['Dave',31,32,33,34,35],
@@ -283,6 +333,9 @@ arr_2 = arr_1
 print("id(arr_1) =          ",id(arr_1))
 print("id(arr_2) =          ",id(arr_2))
 print("arr_1 is arr_2 =     ",arr_1 is arr_2)
+
+
+
 
 # using view() method, which creates just another name of the object
 # shape view doesn't change even shape of original changed
@@ -298,6 +351,8 @@ arr_1 = np.array([['Roy',11,12,13,14,15],
                ['Deidra',41,42,43,44,45],
                ['April',51,52,53,54,55],
                ['Harry',61,62,63,64,65]])
+
+
 # using copy() method, which creates fresh copy of the object
 arr_4 = arr_1.copy()
 print("arr_4 after copying arr_1 =        \n",arr_4)

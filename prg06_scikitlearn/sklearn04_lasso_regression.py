@@ -6,6 +6,8 @@ Least Absolute Shrinkage and Selection Operator.
 It is a regression method that involves penalizing 
 the absolute size of the regression coefficients.
 
+It is a penalized regression type.
+
 By penalizing (or equivalently constraining the 
 sum of the absolute values of the estimates) 
 you end up in a situation where some of the parameter 

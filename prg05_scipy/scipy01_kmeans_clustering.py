@@ -8,18 +8,32 @@ from scipy.cluster.vq import vq
 from scipy.cluster.vq import kmeans
 import numpy as np
 
-# Clustering basics - diagram
-# K-means clustering - eucleadian distance, root of squares formulae
-# centroid and distortions
-# kmeans method and parameter (mandatory, optional) explaination
-# simple to complex examples
-#       different data points
-#       centroid moves towards dense area
-#       iteration count (default=10) and centroid co-ordinate value consistency
-#       centroid count
-# vector quantisation
-# plotting
-# kmeans2 example
+'''
+Clustering basics - diagram
+K-means clustering - 
+     eucleadian distance, 
+     root of squares formulae
+centroid and distortions - refer to picture
+k-means clustering -
+     to partition n observations 
+     into k clusters 
+     in which each observation belongs to a cluster 
+     with the nearest mean
+     first randomly choose number of centroids
+     calculate distance of each point to centroid
+     iterative algorithm, refine and move centroid
+     Voronoi cells?
+kmeans method and parameter (mandatory, optional)
+simple to complex examples
+      different data points
+      centroid moves towards dense area
+      iteration count (default=10) and centroid co-ordinate value consistency
+      centroid count
+vector quantisation
+Unsupervised learning
+plotting
+kmeans2 example
+'''
 
 # data points
 
@@ -244,10 +258,11 @@ data6= np.array([[1.,1.],[2.,2.],[3.,3.],[4.,4.],[5. ,5.],
                  [2.,1.],[3.,2.],[4.,3.],[5.,4.],[6. ,5.]],dtype='float64')
 
 
-data                = data1
+#data                = data1
+data                = data_random3
 #data               = whiten(data1)
-centroid_count      = 2
-iterations_kmeans   = 1000
+centroid_count      = 4
+iterations_kmeans   = 1000 # default 10
 threshold_kmeans    = 0.01
 # computing K-Means with K = 2 (2 clusters)
 for x in range(0, 1):
@@ -264,11 +279,23 @@ print("idx  =\n",idx)
 
 # some plotting using numpy's logical indexing
 plot(data[idx==0,0],data[idx==0,1],'ob',
-     data[idx==1,0],data[idx==1,1],'or')
+     data[idx==1,0],data[idx==1,1],'or',
+     data[idx==2,0],data[idx==2,1],'oy',
+     data[idx==3,0],data[idx==3,1],'oc'
+    )
 plot(centroids[:,0],
      centroids[:,1],'sg',
      markersize=8)
 show()
+
+
+
+
+
+
+
+
+
 
 # use this for 3 centroids when data= data6
 plot(data[idx==0,0],data[idx==0,1],'ob',

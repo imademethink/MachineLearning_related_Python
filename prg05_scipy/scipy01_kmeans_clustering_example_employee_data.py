@@ -12,15 +12,21 @@ np.set_printoptions(precision=3)
 base_path               = '/home/imademethink/prg05_scipy/'
 file_raw_data           = base_path + 'employee_data.csv'
 emp_data_df             = pd.read_csv(file_raw_data,
-                                  header='infer',sep=',',index_col=False,
+                                  header='infer',
+                                  sep=',',
+                                  #delimiter='\s+',
+                                  index_col=False,
                                   dtype = 'object')
 emp_data_values         = emp_data_df.values
+print(emp_data_values.size)
 nparr_bonus_ratings     = emp_data_values[:,1:3].astype(float)
 print('original values \n',nparr_bonus_ratings)
 # plotting raw values
 plt.plot(nparr_bonus_ratings)
-plt.xticks(np.arange(0, nparr_bonus_ratings.size, 1.0))
-plt.ylabel('original values')
+plt.xticks(np.arange(0, nparr_bonus_ratings.size/2, 1.0))
+plt.xlabel('samples')
+plt.ylabel('bonus')
+plt.title('plotting sample vs bonus')
 plt.show()
 
 # Clustering basics - diagram
@@ -63,21 +69,24 @@ plt.plot(data[idx==0,0],data[idx==0,1],'ob',
          data[idx==1,0],data[idx==1,1],'or')
 plt.plot(centroids[:,0],
          centroids[:,1],'sg',markersize=8)
+plt.xlabel('bonus')
+plt.ylabel('rating')
+plt.title('plotting bonus vs rating - clustered')
 plt.show()
 
 # use this for 3 centroids when data= data6
-plt.plot(data[idx==0,0],data[idx==0,1],'ob',
-     data[idx==1,0],data[idx==1,1],'or',
-     data[idx==2,0],data[idx==2,1],'og') # third cluster points
-plt.plot(centroids[:,0],centroids[:,1],'sm',markersize=8)
-plt.show()
+#plt.plot(data[idx==0,0],data[idx==0,1],'ob',
+#     data[idx==1,0],data[idx==1,1],'or',
+#     data[idx==2,0],data[idx==2,1],'og') # third cluster points
+#plt.plot(centroids[:,0],centroids[:,1],'sm',markersize=8)
+#plt.show()
 
 
 
-import time
+#import time
 
-t = (2009, 2, 17, 17, 3, 38, 1, 48, 0)
-t = (1981, 1, 5, 10, 0, 0, 0, 0, 0)
-t = time.mktime(t)
-print (type(int(time.strftime("%j", time.gmtime(t)))))
+#t = (2009, 2, 17, 17, 3, 38, 1, 48, 0)
+#t = (1981, 1, 5, 10, 0, 0, 0, 0, 0)
+#t = time.mktime(t)
+#print (type(int(time.strftime("%j", time.gmtime(t)))))
 

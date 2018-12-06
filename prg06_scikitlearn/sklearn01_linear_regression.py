@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+''' Linear regression used to predict quantitive response (y)
+    from the predictor variable (x)
+'''
+
 import numpy as np
 np.set_printoptions(precision=2)
 
@@ -65,7 +69,7 @@ import matplotlib.pyplot as plt
 plt.scatter(train_data_X, train_data_Y, color='blue')
 plt.scatter(test_data_X,  test_data_Y,  color='green')
 plt.plot([min_x, max_x], [b, m*max_x + b], 'r')
-plt.title('Fitted linear regression', fontsize=16)
+plt.title('Fitted linear regression (blue: train, green: test)', fontsize=16)
 plt.xlabel('x', fontsize=13)
 plt.ylabel('y', fontsize=13)
 

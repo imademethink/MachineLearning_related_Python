@@ -10,8 +10,15 @@ nth degree polynomial in x.
 y = c0 * x^0 + c1 * x^1 +
     c2 * x^2 + c3 * x^3 + ..... + cn * x ^n
 n = degree
-'''
 
+
+PolynomialFeatures : 
+
+It generate a new feature matrix 
+consisting of all polynomial combinations of the 
+features with degree less than or equal to the 
+specified degree
+'''
 
 import random
 import numpy as np
@@ -91,7 +98,6 @@ poly_fit = poly.fit_transform(
 
 ''' prepare a linear regression model finally for prediction '''
 lm            = LinearRegression().fit(poly_fit, dft_samples_train)
-#predictions   = lm.predict(poly_fit)
 predictions   = lm.predict(dfxyz_samples_test)
 
 print("predictions   = ", predictions)

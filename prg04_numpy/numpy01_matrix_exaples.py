@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np 
+import numpy.matlib as npmatlib
+
 
 def print_this_matrix(given_matrix):
   for i in range(len(given_matrix)):
@@ -20,9 +22,9 @@ def print_this_string_matrix(given_matrix):
 
 
 print("generatng matrix for given n x m - with given default values")
-print(np.matlib.ones((5,6)))
+print(npmatlib.ones((5,6)))
 print("generatng matrix for given n x m - with given default values")
-print(np.matlib.zeros((4,3)))
+print(npmatlib.zeros((4,3)))
 
 # returns a matrix with 1 along the diagonal elements and the zeros elsewhere.
 # K =  start index to start first 1
@@ -69,6 +71,9 @@ print("arr_2d_1 =   \n",arr_2d_1)
 print("arr_2d_2 =   \n",arr_2d_2)
 print("np.matmul(arr_2d_1,arr_2d_2) =   \n",np.matmul(arr_2d_1,arr_2d_2))
 
+
+
+
 # solving linear equation
 aaa=   2.0
 bbb= - 9.0
@@ -89,6 +94,8 @@ print("np.amax(arr_extreme)                    --->",np.amax(arr_extreme))
 print("np.amax(arr_extreme, axis=0)--vertical  --->",np.amax(arr_extreme, axis=0))
 print("np.amax(arr_extreme, axis=1)--horizontal--->",np.amax(arr_extreme, axis=1))
 print("np.amax(arr_extreme, axis=1)--horizontal--->",np.amax(arr_extreme, axis=1))
+
+# flatten : return a copy of the array collapsed into one dimension
 arr_extreme.flatten()
 print("just index of sorted element")
 print("np.argmax(arr_extreme, axis=1)--horizontal--->",np.argmax(arr_extreme, axis=1))

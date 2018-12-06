@@ -4,6 +4,7 @@
 
 ''' basic example '''
 import numpy as np
+import matplotlib.pyplot as plt
 from scipy import interpolate
 
 x = np.arange(0,10)
@@ -11,12 +12,10 @@ y = np.exp(-x/3.0)
 f = interpolate.interp1d(x, y, fill_value='extrapolate')
 
 print (f(9))
-print (f(15))
-
+print (f(15)) # extrapolated value got here
 
 
 import numpy as np
-import matplotlib.pyplot as plt
 import scipy.interpolate as interpolate
 
 '''
@@ -81,18 +80,22 @@ xi = np.array([0.2, 0.5, 0.7, 0.9])
 yi = np.array([0.3, 0.1, 0.2, 0.1])
 # expand x values
 x = np.linspace(0, 1.5, 50)
-# spline order: 1 linear, 2 quadratic, 3 cubic ... 
+# spline order: 1=linear, 2=quadratic, 3=cubic ... 
 order = 1
 # do inter/extrapolation
 s = InterpolatedUnivariateSpline(xi, yi, k=order)
 y = s(x)
 
-# example showing the interpolation for linear, quadratic and cubic interpolation
-plt.figure()
+# example showing the interpolation for following kind
+# linear, quadratic and cubic interpolation
+#plt.figure()
 plt.plot(xi, yi)
-for order in range(1, 4):
-    s = InterpolatedUnivariateSpline(xi, yi, k=order)
+
+
+for order_new in range(1, 4):
+    s = InterpolatedUnivariateSpline(xi, yi, k=order_new)
     y = s(x)
     plt.plot(x, y)
+plt.legend(['linear','quadratic','cubic'])
 plt.show()
 

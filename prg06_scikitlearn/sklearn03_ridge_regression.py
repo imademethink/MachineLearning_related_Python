@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 ''' ridge regression '''
+''' a technique for analysing multiple regression data 
+    that suffer from multi-colinearity
+'''
 
 import numpy as np
 import pandas as pd
